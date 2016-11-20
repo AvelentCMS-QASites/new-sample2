@@ -16,10 +16,22 @@ module Jekyll
        get_region_classes_from_inner_html(context)].compact.join(',')
     end
 
+
+    CLASS_REGEX = /class=['"]([^'"]+)['"]/
     def get_region_classes_from_inner_html(context)
       inner_contents = inner_html(context)
       # Parse nodes for classes already in there. 
-      nil
+      node_classes = []
+      @nodelist.each do |n|
+        if n =~ CLASS_REGEX
+          node_classes << $1
+        end
+      end
+      if node_classes.any?
+        node_classes.join(',')
+      else
+        nil
+      end
     end
     
     def inner_html(context)

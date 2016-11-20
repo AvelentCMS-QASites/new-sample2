@@ -1,0 +1,69 @@
+---
+layout: default
+---
+
+<!-- === BEGIN CONTENT === -->
+<div id="welcome" class="background-white">
+    <div class="container">
+        <div class="row margin-vert-40">
+            <!-- Main Text -->
+            <div class="col-md-12">
+                <h2 class="text-center article-title">Welcome to Boss</h2>
+                <p class="text-center">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis
+                    nisl ut aliquip ex ea commodo consequat.</p>
+                <img class="fadeInUp animate" alt="" src="assets/img/responsive_homepage.jpg" style="display: block; margin-left: auto; margin-right: auto; margin-top: 40px;">
+            </div>
+            <!-- End Main Text -->
+        </div>
+    </div>
+</div>
+<!-- Icons -->
+<div id="icons" class="parallax-bg1 text-light background-primary" style="background-position: 50% 0%;" data-stellar-background-ratio="0.5">
+    <div class="container">
+        <div class="row margin-vert-40">
+            <!-- Icons -->
+            <div class="col-md-4 text-center animate fadeInLeft">
+                <i class="fa-crosshairs fa-3x color-primary-lighter"></i>
+                <h2 class="padding-top-10">Innovate</h2>
+                <p>Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer.</p>
+            </div>
+            <div class="col-md-4 text-center animate fadeIn">
+                <i class="fa-puzzle-piece fa-3x color-primary-lighter"></i>
+                <h2 class="padding-top-10">Enlighten</h2>
+                <p>Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer.</p>
+            </div>
+            <div class="col-md-4 text-center animate fadeInRight">
+                <i class="fa-music fa-3x color-primary-lighter"></i>
+                <h2 class="padding-top-10">Inspire</h2>
+                <p>Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer.</p>
+            </div>
+            <!-- End Icons -->
+        </div>
+    </div>
+</div>
+<!-- End Icons -->
+<!-- Content -->
+<div id="content" class="background-white">
+    <div class="container">
+        <div class="row margin-vert-40">
+            <div class="col-md-12">
+                {% region regular %}
+                {% regionblock header, type: header %}
+                  <h2 class="text-center article-title">Lorem ipsum dolor</h2>
+                {% endregionblock %}
+                
+                {% regionblock header %}
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam sapien risus, blandit at fringilla ac, varius sed dolor. Donec augue lacus, vulputate sed consectetur facilisis, interdum pharetra ligula. Nulla suscipit erat nibh, ut
+                      porttitor nisl dapibus eu.</p>
+                  <p>Phasellus porta eros vel lacus euismod consequat. Phasellus eleifend, nibh non feugiat hendrerit, lacus enim adipiscing eros, a pharetra erat neque eget est. Quisque vitae aliquet urna. Integer suscipit lectus eu enim porttitor
+                      fringilla. Ut blandit, urna in auctor euismod, arcu eros pharetra metus, a porta purus libero a nibh.</p>
+                  <p>Nam eget urna pellentesque nisl ultrices dapibus. Mauris accumsan vehicula nisl, sed tempus mauris facilisis eu. Donec a iaculis nisi, quis malesuada justo. Pellentesque ut enim sit amet ipsum dignissim egestas. Morbi tincidunt
+                      rhoncus urna eget placerat.</p>
+                {% endregionblock %}
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End Content -->
+{% include portfolio.html %}
+{% include hiring.html %}

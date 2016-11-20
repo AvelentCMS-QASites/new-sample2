@@ -1,12 +1,5 @@
 module Jekyll
-  class CmsRegionTag < Liquid::Tag
-    def initialize(tag_name, text, tokens)
-      super
-      params = text.to_s.strip.split(',')
-      @filename = params.shift.strip + '.json'
-      @options = process_params(params)
-    end
-
+  module CmsRegionMethods
     def process_params(params)
       kv_params = {}
       params.each do |kvstr|
@@ -31,9 +24,11 @@ module Jekyll
       site.data['regions'] << File.join(page_folder, @filename)
 
       region_type = @options['type'] || 'html'
-      wrap('div', 'class' => 'tt-region', 'data-region' => File.join(site.active_lang, page_folder, @filename), 'data-region-type' => region_type) do
+      region_classes = get_region_classes(context)    
+      
+      wrap('div', 'class' => 'tt-region', 'data-region' => File.join(site.active_lang, page_folder, @filename), 'data-region-type' => region_type, 'data-region-classes'=>region_classes) do
         if region_items.size == 0
-          include(include_data_path, context, 0, {"_template"=>"html"})
+          empty_region_content(include_data_path, context)
         else
           region_items.each_with_index.map do |ped, index|
             include(include_data_path, context, index, ped)
@@ -47,6 +42,18 @@ module Jekyll
     end
 
     private
+
+    def get_region_classes(context)
+      get_region_classes_from_options(context)
+    end
+    
+    def get_region_classes_from_options(context)
+      @options['classes']
+    end
+
+    def empty_region_content(include_data_path, context)
+      include(include_data_path, context, 0, {"_template"=>"html"})
+    end
 
     def include(include_data_path, context, index, ped)
       template = ped['_template']
@@ -98,4 +105,3 @@ module Jekyll
   end
 end
 
-Liquid::Template.register_tag('region', Jekyll::CmsRegionTag)

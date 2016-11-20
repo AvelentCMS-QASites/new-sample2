@@ -39,7 +39,8 @@ module Jekyll
     end
     
     def empty_region_content(include_data_path, context)
-      inner_html(context)
+      include(include_data_path, context, 0, {"_template"=>"html", "content"=>"#{inner_html(context)}"})
+      #inner_html(context)
     end
 
   end

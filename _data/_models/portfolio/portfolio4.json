@@ -1,0 +1,8 @@
+{
+  "name": "4 Image",
+  "gallery_text": "Models work!",
+  "gallery_alt": "Image 4",
+  "gallery_image": {
+    "url": "/assets/images/frontpage/image4.jpg"
+  }
+}

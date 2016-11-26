@@ -2,132 +2,22 @@
         <div id="porfolio" class="parallax-bg2" style="background-position: 50% 0%;" data-stellar-background-ratio="0.5">
             <div class="container">
                 <div class="row margin-top-40">
-                    <!-- Portfolio Item -->
-                    <div class="portfolio-item col-sm-4 col-xs-6 margin-bottom-40">
-                        <a href="#">
-                            <figure class="animate fadeInLeft">
-                                <div class="grid-image">
-                                    <div class="featured-info">
-                                        <div class="info-wrapper">Velit esse molestie</div>
-                                    </div>
-                                    <img alt="image1" src="assets/img/frontpage/image1.jpg">
-                                </div>
-                            </figure>
-                        </a>
-                    </div>
-                    <!-- End Portfolio Item -->
-                    <!-- Portfolio Item -->
-                    <div class="portfolio-item col-sm-4 col-xs-6 margin-bottom-40">
-                        <a href="#">
-                            <figure class="animate fadeInUp">
-                                <div class="grid-image">
-                                    <div class="featured-info">
-                                        <div class="info-wrapper">Quam nunc putamus</div>
-                                    </div>
-                                    <img alt="image2" src="assets/img/frontpage/image2.jpg">
-                                </div>
-                            </figure>
-                        </a>
-                    </div>
-                    <!-- End Portfolio Item -->
-                    <!-- Portfolio Item -->
-                    <div class="portfolio-item col-sm-4 col-xs-6 margin-bottom-40">
-                        <a href="#">
-                            <figure class="animate fadeInRight">
-                                <div class="grid-image">
-                                    <div class="featured-info">
-                                        <div class="info-wrapper">Placerat facer possim</div>
-                                    </div>
-                                    <img alt="image3" src="assets/img/frontpage/image3.jpg">
-                                </div>
-                            </figure>
-                        </a>
-                    </div>
-                    <!-- End Portfolio Item -->
-                    <!-- Portfolio Item -->
-                    <div class="portfolio-item col-sm-4 col-xs-6 margin-bottom-40">
-                        <a href="#">
-                            <figure class="animate fadeInLeft">
-                                <div class="grid-image">
-                                    <div class="featured-info">
-                                        <div class="info-wrapper">Nam liber tempor</div>
-                                    </div>
-                                    <img alt="image4" src="assets/img/frontpage/image4.jpg">
-                                </div>
-                            </figure>
-                        </a>
-                    </div>
-                    <!-- End Portfolio Item -->
-                    <!-- Portfolio Item -->
-                    <div class="portfolio-item col-sm-4 col-xs-6 margin-bottom-40">
-                        <a href="#">
-                            <figure class="animate fadeInUp">
-                                <div class="grid-image">
-                                    <div class="featured-info">
-                                        <div class="info-wrapper">Donec non urna</div>
-                                    </div>
-                                    <img alt="image5" src="assets/img/frontpage/image5.jpg">
-                                </div>
-                            </figure>
-                        </a>
-                    </div>
-                    <!-- End Portfolio Item -->
-                    <!-- Portfolio Item -->
-                    <div class="portfolio-item col-sm-4 col-xs-6 margin-bottom-40">
-                        <a href="#">
-                            <figure class="animate fadeInRight">
-                                <div class="grid-image">
-                                    <div class="featured-info">
-                                        <div class="info-wrapper">Nullam consectetur</div>
-                                    </div>
-                                    <img alt="image6" src="assets/img/frontpage/image6.jpg">
-                                </div>
-                            </figure>
-                        </a>
-                    </div>
-                    <!-- End Portfolio Item -->
-                    <!-- Portfolio Item -->
-                    <div class="portfolio-item col-sm-4 col-xs-6 margin-bottom-40">
-                        <a href="#">
-                            <figure class="animate fadeInLeft">
-                                <div class="grid-image">
-                                    <div class="featured-info">
-                                        <div class="info-wrapper">Velit esse molestie</div>
-                                    </div>
-                                    <img alt="image7" src="assets/img/frontpage/image7.jpg">
-                                </div>
-                            </figure>
-                        </a>
-                    </div>
-                    <!-- End Portfolio Item -->
-                    <!-- Portfolio Item -->
-                    <div class="portfolio-item col-sm-4 col-xs-6 margin-bottom-40">
-                        <a href="#">
-                            <figure class="animate fadeInUp">
-                                <div class="grid-image">
-                                    <div class="featured-info">
-                                        <div class="info-wrapper">Quam nunc putamus</div>
-                                    </div>
-                                    <img alt="image8" src="assets/img/frontpage/image8.jpg">
-                                </div>
-                            </figure>
-                        </a>
-                    </div>
-                    <!-- End Portfolio Item -->
-                    <!-- Portfolio Item -->
-                    <div class="portfolio-item col-sm-4 col-xs-6 margin-bottom-40">
-                        <a href="#">
-                            <figure class="animate fadeInRight">
-                                <div class="grid-image">
-                                    <div class="featured-info">
-                                        <div class="info-wrapper">Placerat facer possim</div>
-                                    </div>
-                                    <img alt="image9" src="assets/img/frontpage/image9.jpg">
-                                </div>
-                            </figure>
-                        </a>
-                    </div>
-                    <!-- End Portfolio Item -->
+                    {% for item in site.data._models.portfolio %}
+                      <!-- Portfolio Item -->
+                      <div class="portfolio-item col-sm-4 col-xs-6 margin-bottom-40">
+                          <a href="#">
+                              <figure class="animate {% cycle 'fadeInLeft', 'fadeInUp', 'fadeInRight' %}">
+                                  <div class="grid-image">
+                                      <div class="featured-info">
+                                          <div class="info-wrapper">{{ item.gallery_text }}</div>
+                                      </div>
+                                      <img alt="{{item.gallery_alt}}" src="{{item.gallery_image.url}}">
+                                  </div>
+                              </figure>
+                          </a>
+                      </div>
+                      <!-- End Portfolio Item -->
+                    {% endfor %}
                 </div>
             </div>
         </div>

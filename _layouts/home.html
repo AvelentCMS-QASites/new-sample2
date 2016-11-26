@@ -8,10 +8,14 @@ layout: default
         <div class="row margin-vert-40">
             <!-- Main Text -->
             <div class="col-md-12">
-                <h2 class="text-center article-title">Welcome to Boss</h2>
-                <p class="text-center">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis
+                {% regionblock welcome_header, type: header %}
+                  <h2 class="text-center article-title">Welcome to Boss</h2>
+                {% endregionblock %}
+                {% regionblock welcome %}
+                  <p class="text-center">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis
                     nisl ut aliquip ex ea commodo consequat.</p>
-                <img class="fadeInUp animate" alt="" src="assets/img/responsive_homepage.jpg" style="display: block; margin-left: auto; margin-right: auto; margin-top: 40px;">
+                  <img class="fadeInUp animate" alt="" src="assets/img/responsive_homepage.jpg" style="display: block; margin-left: auto; margin-right: auto; margin-top: 40px;">
+                {% endregionblock %}
             </div>
             <!-- End Main Text -->
         </div>
@@ -23,19 +27,43 @@ layout: default
         <div class="row margin-vert-40">
             <!-- Icons -->
             <div class="col-md-4 text-center animate fadeInLeft">
-                <i class="fa-crosshairs fa-3x color-primary-lighter"></i>
-                <h2 class="padding-top-10">Innovate</h2>
-                <p>Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer.</p>
+                {% regionblock message_one_icon, type: image %}
+                  <i class="fa-crosshairs fa-3x color-primary-lighter"></i>
+                {%  endregionblock %}
+                  
+                {% regionblock message_one_header, type: header %}
+                  <h2 class="padding-top-10">Innovate</h2>
+                {%  endregionblock %}
+                {% regionblock message_one %}
+                  <p>Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer.</p>
+                {% endregionblock %}
+                
             </div>
             <div class="col-md-4 text-center animate fadeIn">
-                <i class="fa-puzzle-piece fa-3x color-primary-lighter"></i>
-                <h2 class="padding-top-10">Enlighten</h2>
-                <p>Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer.</p>
+                {% regionblock message_two_icon, type: image %}
+                  <i class="fa-puzzle-piece fa-3x color-primary-lighter"></i>
+                {%  endregionblock %}
+                
+                {% regionblock message_two_header, type: header %}
+                  <h2 class="padding-top-10">Enlighten</h2>
+                {% endregionblock %}
+                {% regionblock message_two %}
+                  <p>Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer.</p>
+                {% endregionblock %}
+                
             </div>
             <div class="col-md-4 text-center animate fadeInRight">
-                <i class="fa-music fa-3x color-primary-lighter"></i>
-                <h2 class="padding-top-10">Inspire</h2>
-                <p>Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer.</p>
+                {% regionblock message_three_icon, type: image %}
+                  <i class="fa-music fa-3x color-primary-lighter"></i>
+                {%  endregionblock %}
+                
+                {% regionblock message_three_header, type: header %}
+                  <h2 class="padding-top-10">Inspire</h2>
+                {% endregionblock %}
+                {% regionblock message_three %}
+                  <p>Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer.</p>
+                {% endregionblock %}
+                
             </div>
             <!-- End Icons -->
         </div>
@@ -47,7 +75,6 @@ layout: default
     <div class="container">
         <div class="row margin-vert-40">
             <div class="col-md-12">
-                {% region regular %}
                 {% regionblock content_header, type: header %}
                   <h2 class="text-center article-title">Lorem ipsum dolor</h2>
                 {% endregionblock %}

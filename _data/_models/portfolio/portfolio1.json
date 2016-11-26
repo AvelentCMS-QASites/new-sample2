@@ -1,0 +1,8 @@
+{
+  "name": "First Image",
+  "gallery_text": "Models work!",
+  "gallery_alt": "Image one",
+  "gallery_image": {
+    "url": "/assets/images/frontpage/image1.jpg"
+  }
+}

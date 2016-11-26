@@ -1,0 +1,17 @@
+{
+  "name": {
+    "type": "string",
+    "required": true
+  },
+  "gallery_text": {
+    "type": "string"
+  },
+  "gallery_image": {
+    "type": "image",
+    "required": true,
+  },
+  "gallery_alt": {
+    "type": "string",
+    "required": true,
+  }  
+}
